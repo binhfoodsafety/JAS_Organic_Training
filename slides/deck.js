@@ -403,6 +403,28 @@
     x0 = null;
   });
 
+  // Hỗ trợ cuộn chuột (Mouse wheel) chuyển slide mượt mà
+  var wheelHold = 0;
+  window.addEventListener('wheel', function (e) {
+    if (document.body.classList.contains('reading')) return; // Dạng cuộn thì cuộn tự nhiên
+    if (Date.now() < wheelHold) return;
+    if (Math.abs(e.deltaY) > 25) {
+      if (e.deltaY > 0) {
+        if (idx < slides.length - 1) {
+          e.preventDefault();
+          wheelHold = Date.now() + 320;
+          show(idx + 1);
+        }
+      } else {
+        if (idx > 0) {
+          e.preventDefault();
+          wheelHold = Date.now() + 320;
+          show(idx - 1);
+        }
+      }
+    }
+  }, { passive: false });
+
   window.addEventListener('resize', scale);
   var start = parseInt((location.hash || '').slice(1), 10);
   idx = -1;

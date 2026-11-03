@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tiêu chuẩn JAS Hữu cơ Nhật Bản</title>
-<meta name="description" content="Khoá học Tiêu chuẩn Nông nghiệp Hữu cơ Nhật Bản (JAS) tiếng Việt: 8 module slide, thuyết minh âm thanh, flashcard, quiz và checklist tuân thủ.">
+<meta name="description" content="Khoá học Tiêu chuẩn Nông nghiệp Hữu cơ Nhật Bản (JAS) tiếng Việt: 8 module, có thuyết minh âm thanh, flashcard, quiz và checklist tuân thủ.">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -14,8 +14,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="JAS Organic">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta property="og:title" content="Tiêu chuẩn JAS Hữu cơ Nhật Bản (JAS Organic Training)">
-<meta property="og:description" content="Khoá học bài giảng web tiếng Việt: slide thuyết minh giọng đọc, flashcard, quiz và checklist tự đánh giá.">
+<meta property="og:title" content="Tiêu chuẩn JAS Hữu cơ Nhật Bản">
+<meta property="og:description" content="Khoá học tiếng Việt: slide thuyết minh, flashcard, quiz và công cụ checklist tuân thủ.">
 <meta property="og:image" content="https://binhfoodsafety.github.io/JAS_Organic_Training/icons/icon-512.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,527 +24,199 @@
 <link rel="stylesheet" href="slides/deck.css">
 <style>
   :root {
-    --bg-page: #f0fdf4;
-    --card-bg: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #475569;
-    --border-color: #cbd5e1;
-    --brand-main: #064e3b;
-    --brand-accent: #10b981;
+    --bg: #edf1f3; --paper: #fbfcfc; --ink: #1c2a30; --ink-2: #43535b; --muted: #72828a; --line: #d8dfe2;
+    --brand: #059669; --brand-soft: #d1fae5; --warn: #b5651d;
+    --font: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1512; --paper: #12201b; --ink: #e4ebee; --ink-2: #b8c4ca; --muted: #8a979e; --line: #1c362d;
+      --brand: #34d399; --brand-soft: #13392c; --warn: #e0a060;
+    }
   }
   :root[data-theme="dark"] {
-    --bg-page: #061e16;
-    --card-bg: #0d2b22;
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border-color: #1e3a30;
-    --brand-main: #047857;
-    --brand-accent: #34d399;
+    --bg: #0b1512; --paper: #12201b; --ink: #e4ebee; --ink-2: #b8c4ca; --muted: #8a979e; --line: #1c362d;
+    --brand: #34d399; --brand-soft: #13392c; --warn: #e0a060;
   }
-  body.portal {
-    background: var(--bg-page);
-    color: var(--text-main);
-    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
-  .portal-wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-  }
-  .portal-hd {
-    background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
-    color: #ffffff;
-    padding: 3rem 0 2.5rem;
-    position: relative;
-    box-shadow: 0 4px 24px rgba(6, 78, 59, 0.25);
-  }
-  .portal-hd .eyebrow {
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #a7f3d0;
-    margin-bottom: 0.5rem;
-  }
-  .portal-hd h1 {
-    font-size: 2.4rem;
-    font-weight: 900;
-    margin: 0 0 1rem;
-    letter-spacing: -0.02em;
-  }
-  .portal-hd .lead {
-    font-size: 1.15rem;
-    max-width: 820px;
-    color: #ecfdf5;
-    margin: 0 0 1.75rem;
-  }
-  .portal-stats {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .stat-pill {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 0.5rem 1.15rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-  .portal-nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-  :root[data-theme="dark"] .portal-nav-bar {
-    background: #0d2b22;
-  }
-  .quick-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  .btn-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.55rem 1.1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 700;
-    transition: all 0.2s;
-  }
-  .btn-link.primary {
-    background: #059669;
-    color: #ffffff;
-  }
-  .btn-link.primary:hover {
-    background: #047857;
-  }
-  .btn-link.secondary {
-    background: #f1f5f9;
-    color: #1e293b;
-    border: 1px solid #cbd5e1;
-  }
-  :root[data-theme="dark"] .btn-link.secondary {
-    background: #1e3a30;
-    color: #e2e8f0;
-    border-color: #2d5a4a;
-  }
-  .btn-link.secondary:hover {
-    background: #e2e8f0;
-  }
-  .theme-btn {
-    background: none;
-    border: 1px solid var(--border-color);
-    padding: 0.45rem 0.85rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    color: inherit;
-    font-weight: 600;
-  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 28px 24px 48px; }
+  header { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); font-weight: 700; }
+  h1 { margin: 4px 0 6px; font-size: clamp(26px, 4vw, 38px); line-height: 1.15; }
+  .lead { margin: 0; color: var(--ink-2); max-width: 720px; }
+  .stats { display: flex; gap: 22px; }
+  .stats b { display: block; font-size: 24px; color: var(--brand); font-variant-numeric: tabular-nums; }
+  .stats span { font-size: 12px; color: var(--muted); }
 
-  /* Main Layout */
-  .layout-grid {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 2rem;
-    margin: 2rem 0 4rem;
-  }
-  @media (max-width: 900px) {
-    .layout-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  .viewer { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
+  .bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+  .bar label { font-weight: 600; font-size: 14px; }
+  select, .btn { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 10px; padding: 9px 12px; min-height: 40px; }
+  select { flex: 1; min-width: 220px; max-width: 560px; cursor: pointer; }
+  .btn { cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .btn:hover { border-color: var(--brand); color: var(--brand); }
+  .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .btn.primary:hover { color: #fff; filter: brightness(1.08); }
+  .frame { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: var(--bg); border: 1px solid var(--line); }
+  .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .desc { margin: 12px 4px 0; color: var(--ink-2); font-size: 14px; }
 
-  /* Module Selector Sidebar */
-  .module-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-  }
-  .mod-card {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border-color);
-    border-radius: 14px;
-    padding: 1.15rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .mod-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    border-color: var(--brand-accent);
-  }
-  .mod-card.active {
-    border-color: var(--brand-accent);
-    background: #ecfdf5;
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.18);
-  }
-  :root[data-theme="dark"] .mod-card.active {
-    background: #064e3b;
-  }
-  .mod-thumb {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    background: #f1f5f9;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .mod-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .mod-info {
-    flex: 1;
-    min-width: 0;
-  }
-  .mod-info .idx {
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--brand-accent);
-  }
-  .mod-info h3 {
-    margin: 0.15rem 0 0.35rem;
-    font-size: 0.98rem;
-    font-weight: 800;
-    line-height: 1.35;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .mod-info .meta-txt {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
+  h2 { font-size: 20px; margin: 34px 0 14px; }
+  .modules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .mod { text-align: left; font: inherit; color: inherit; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px; cursor: pointer; display: grid; grid-template-columns: 34px 1fr; gap: 14px; transition: transform .15s, border-color .15s; }
+  .mod:hover { transform: translateY(-2px); border-color: var(--brand); }
+  .mod[aria-current="true"] { border-color: var(--brand); box-shadow: inset 0 0 0 1px var(--brand); }
+  .mod .n { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); font-weight: 800; }
+  .mod h3 { margin: 0 0 4px; font-size: 16px; line-height: 1.3; }
+  .mod p { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); }
+  .mod small { font-size: 12px; color: var(--muted); }
 
-  /* Player Area */
-  .player-box {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border-color);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-  }
-  .player-hd {
-    padding: 1.15rem 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  :root[data-theme="dark"] .player-hd {
-    background: #0f172a;
-  }
-  .player-title h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 800;
-  }
-  .player-title p {
-    margin: 0.2rem 0 0;
-    font-size: 0.88rem;
-    color: var(--text-muted);
-  }
-  .player-actions {
-    display: flex;
-    gap: 0.5rem;
-  }
-  .player-iframe-wrap {
-    width: 100%;
-    height: 640px;
-    background: #000000;
-    position: relative;
-  }
-  @media (max-width: 768px) {
-    .player-iframe-wrap {
-      height: 480px;
-    }
-  }
-  .player-iframe-wrap iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+  .notes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .note { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--ink-2); }
+  .note b { color: var(--ink); display: block; margin-bottom: 4px; }
+  kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; background: var(--bg); }
+  footer { margin-top: 36px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
 
-  /* Practical Cards Section */
-  .extra-section {
-    margin: 3rem 0;
+  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .tool { display: block; background: var(--paper); border: 2px solid #059669; border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--ink-2); text-decoration: none; }
+  .tool:hover { transform: translateY(-2px); }
+  .tool b { display: block; font-size: 16px; color: var(--ink); margin-bottom: 4px; }
+  @media (max-width: 900px) { .modules, .notes { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) {
+    .wrap { padding: 18px 16px 36px; }
+    .modules, .notes, .tools { grid-template-columns: 1fr; }
+    .frame { aspect-ratio: auto; height: 72vh; }
+    .bar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .bar label, #playBtn { display: none; }
+    select { grid-column: 1 / -1; min-width: 0; width: 100%; max-width: none; font-size: 16px; }
+    .bar .btn { justify-content: center; padding: 9px 2px; font-size: 13px; white-space: nowrap; }
   }
-  .extra-section h2 {
-    font-size: 1.6rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: var(--brand-main);
-  }
-  :root[data-theme="dark"] .extra-section h2 {
-    color: var(--brand-accent);
-  }
-  .extra-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-  .extra-card {
-    background: var(--card-bg);
-    border: 1.5px solid var(--border-color);
-    border-radius: 16px;
-    padding: 1.75rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s;
-  }
-  .extra-card:hover {
-    transform: translateY(-3px);
-  }
-  .extra-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.3rem;
-    font-weight: 800;
-  }
-  .extra-card p {
-    margin: 0 0 1.25rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-  }
-
-  /* Footer */
-  .portal-ft {
-    background: #064e3b;
-    color: #a7f3d0;
-    padding: 3rem 0;
-    border-top: 4px solid var(--brand-accent);
-    font-size: 0.92rem;
-  }
-  .portal-ft a {
-    color: #ffffff;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  .portal-ft a:hover {
-    text-decoration: underline;
-  }
+  header { background: linear-gradient(120deg, #064e3b 0%, #065f46 55%, #047857 100%); color: #fff; padding: 26px 28px; border-radius: 18px; }
+  header .eyebrow { color: #a7f3d0; } header h1 { color: #fff; } header .lead { color: #e2e8f0; }
+  .stats b { color: #a7f3d0; } .stats span { color: #e2e8f0; }
+  .mod { grid-template-columns: 58px 1fr; background: color-mix(in srgb, var(--c) 9%, var(--paper)); border: 2px solid color-mix(in srgb, var(--c) 40%, var(--paper)); }
+  .mod:hover { border-color: var(--c); } .mod[aria-current="true"] { border-color: var(--c); box-shadow: inset 0 0 0 1px var(--c); }
+  .mod .n { width: 58px; height: 58px; background: #fff; border-radius: 50%; padding: 7px; box-shadow: 0 0 0 2px var(--c); } .mod .n img { width: 100%; height: 100%; display: block; }
+  .mod h3 { color: color-mix(in srgb, var(--c) 82%, var(--ink)); }
+  .note { border-width: 2px; } .note:nth-child(1) { border-color: #059669; } .note:nth-child(2) { border-color: #15803d; } .note:nth-child(3) { border-color: #d97706; } .note:nth-child(4) { border-color: #2563eb; }
 </style>
 </head>
-<body class="portal">
-
-<header class="portal-hd">
-  <div class="portal-wrap">
-    <div class="eyebrow">Japanese Agricultural Standards · Hệ Thống Đào Tạo Trực Tuyến</div>
-    <h1>Tiêu chuẩn JAS Hữu cơ Nhật Bản</h1>
-    <p class="lead">Chương trình đào tạo toàn diện chuẩn hoá kiến thức chuyên sâu về Tiêu chuẩn Nông sản Thực vật (JAS 1605), Thực phẩm Chế biến (JAS 1606), Quy định Ghi nhãn & Dấu chứng nhận (Thông báo 24), Tiêu chuẩn Kỹ thuật cơ sở và Phương pháp Thanh tra Hiện trường.</p>
-    <div class="portal-stats">
-      <span class="stat-pill">📚 8 Module chuyên sâu</span>
-      <span class="stat-pill">🖥️ 117 Slide chuẩn 16:9</span>
-      <span class="stat-pill">🎙️ Thuyết minh âm thanh tiếng Việt</span>
-      <span class="stat-pill">🧠 96 Flashcard & 96 Quiz</span>
-      <span class="stat-pill">🛠️ 2 Công cụ thực hành</span>
-    </div>
-  </div>
-</header>
-
-<div class="portal-nav-bar">
-  <div class="portal-wrap" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
-    <div class="quick-links">
-      <a href="on-tap.html" class="btn-link primary">🧠 Ôn tập Flashcard & Quiz</a>
-      <a href="cong-cu.html" class="btn-link secondary">🛠️ Công cụ thực hành & Checklist</a>
-    </div>
+<body>
+<div class="wrap">
+  <header>
     <div>
-      <button type="button" class="theme-btn" id="btn-theme" title="Đổi giao diện sáng/tối">🌓 Giao diện</button>
+      <div class="eyebrow">Japanese Agricultural Standards · Khoá học mở</div>
+      <h1>Tiêu chuẩn JAS Hữu cơ Nhật Bản</h1>
+      <p class="lead">Khoá học tiếng Việt toàn diện cho cán bộ QA/QC, chuyên viên đánh giá và nhà máy nông sản xuất khẩu: từ canh tác thực vật (JAS 1605), chế biến (JAS 1606), ghi nhãn & dấu JAS đến phương pháp thanh tra hiện trường. Có thuyết minh giọng đọc tiếng Việt khi trình chiếu.</p>
     </div>
-  </div>
-</div>
-
-<main class="portal-wrap">
-  <div class="layout-grid">
-    <!-- Sidebar: Danh sách 8 module -->
-    <aside class="sidebar">
-      <h3 style="font-size:1.15rem; font-weight:800; margin:0 0 1rem; color:var(--brand-main);">Lộ trình 8 module bài giảng</h3>
-      <div class="module-list" id="mod-container">
-        <!-- Rendered dynamically via js -->
-      </div>
-    </aside>
-
-    <!-- Main Player Area: Trình phát slide iframe -->
-    <section class="player-area">
-      <div class="player-box">
-        <div class="player-hd">
-          <div class="player-title">
-            <h2 id="cur-mod-title">Module 1: Tổng quan Hệ thống Chứng nhận JAS Hữu cơ</h2>
-            <p id="cur-mod-desc">Khung pháp lý MAFF, triết lý hữu cơ và cơ chế phân hạng chất lượng.</p>
-          </div>
-          <div class="player-actions">
-            <a href="#" id="link-direct" target="_blank" class="btn-link secondary" style="font-size:0.85rem;" title="Mở toàn màn hình trong tab mới">Mở tab riêng ↗</a>
-            <a href="on-tap.html" id="link-mod-study" class="btn-link primary" style="font-size:0.85rem;" title="Ôn tập câu hỏi của module này">Ôn tập module này →</a>
-          </div>
-        </div>
-        <div class="player-iframe-wrap">
-          <iframe id="slide-frame" src="slides/01-tong-quan.html" allowfullscreen title="Trình chiếu bài giảng JAS"></iframe>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Phần Thực hành và Công cụ Hỗ trợ -->
-  <section class="extra-section">
-    <h2>Hệ thống Thực hành & Công cụ Bổ trợ</h2>
-    <div class="extra-grid">
-      <div class="extra-card">
-        <div>
-          <h3>📋 Checklist Tự Đánh Giá Tuân Thủ</h3>
-          <p>Bảng kiểm tra 20 tiêu chí vàng cho Nông trại (JAS 1605) và Nhà máy chế biến (JAS 1606). Đánh giá độ sẵn sàng trước ngày tiếp đón đoàn thanh tra.</p>
-        </div>
-        <a href="cong-cu.html" class="btn-link primary">Mở Checklist tự đánh giá →</a>
-      </div>
-      <div class="extra-card">
-        <div>
-          <h3>🧮 Máy Tính % Hữu Cơ & Cân Đối Khối Lượng</h3>
-          <p>Tính toán tỷ lệ nguyên liệu hữu cơ (≥ 95% sau khi trừ nước và muối) và thực hành kiểm toán Mass Balance phát hiện sai lệch xuất thừa.</p>
-        </div>
-        <a href="cong-cu.html" class="btn-link primary">Mở Máy tính thực hành →</a>
-      </div>
-      <div class="extra-card">
-        <div>
-          <h3>🧠 Ôn Tập Flashcard & Trắc Nghiệm Quiz</h3>
-          <p>96 thẻ ghi nhớ khái niệm then chốt và 96 câu hỏi tình huống có giải thích chi tiết, kèm liên kết dẫn thẳng về slide liên quan.</p>
-        </div>
-        <a href="on-tap.html" class="btn-link primary">Vào phòng Ôn tập ngay →</a>
-      </div>
+    <div class="stats">
+      <div><b>8</b><span>Module</span></div>
+      <div><b id="totalSlides">117</b><span>Slide</span></div>
+      <div><b>96</b><span>Flashcard</span></div>
+      <div><b>96</b><span>Câu quiz</span></div>
     </div>
+  </header>
+
+  <section class="viewer" aria-label="Xem slide">
+    <div class="bar">
+      <label for="moduleSelect">Nội dung:</label>
+      <select id="moduleSelect"></select>
+      <button class="btn primary" id="playBtn" type="button" title="Phát thuyết minh từ slide đầu, tự chuyển slide">▶ Trình chiếu có thuyết minh</button>
+      <a class="btn" id="openBtn" href="#" target="_blank" rel="noopener" title="Mở trong tab mới để trình chiếu toàn màn hình">⛶ Mở tab mới</a>
+      <a class="btn" id="fcBtn" href="on-tap.html" title="Ôn module này bằng thẻ lật">🃏 Flashcard</a>
+      <a class="btn" id="quizBtn" href="on-tap.html" title="Tự kiểm tra module này">🎯 Quiz</a>
+    </div>
+    <div class="frame"><iframe id="deckFrame" title="Slide Tiêu chuẩn JAS Hữu cơ" allow="fullscreen; autoplay"></iframe></div>
+    <p class="desc" id="moduleDesc"></p>
   </section>
-</main>
 
-<footer class="portal-ft">
-  <div class="portal-wrap">
-    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
-      <div>
-        <p style="margin:0 0 0.4rem; font-weight:800; font-size:1.1rem; color:#ffffff;">Khoá học Tiêu chuẩn JAS Hữu cơ Nhật Bản</p>
-        <p style="margin:0; font-size:0.88rem;">Biên soạn chuẩn hoá theo các văn bản quy chuẩn của Bộ Nông Lâm Thủy sản Nhật Bản (MAFF).</p>
-      </div>
-      <div>
-        <p style="margin:0; font-size:0.85rem;">Mã nguồn mở tại: <a href="https://github.com/binhfoodsafety/JAS_Organic_Training" target="_blank">github.com/binhfoodsafety/JAS_Organic_Training</a></p>
-      </div>
-    </div>
+  <h2>Thực hành</h2>
+  <div class="tools">
+    <a class="tool" href="cong-cu.html"><b>📋 Checklist Tự Đánh Giá Tuân Thủ</b>20 tiêu chí vàng tự kiểm tra độ sẵn sàng trước đợt thanh tra chính thức cho Nông trại (JAS 1605) và Nhà máy chế biến (JAS 1606).</a>
+    <a class="tool" href="cong-cu.html"><b>🧮 Máy Tính % Hữu Cơ & Cân Đối Khối Lượng</b>Tính nhanh tỷ lệ nguyên liệu hữu cơ (loại trừ nước & muối theo chuẩn ≥ 95%) và thực hành kiểm toán Mass Balance phát hiện xuất thừa.</a>
   </div>
-</footer>
+
+  <h2>Lộ trình 8 module</h2>
+  <div class="modules" id="moduleList"></div>
+
+  <h2>Cách sử dụng</h2>
+  <div class="notes">
+    <div class="note"><b>Điều khiển slide</b>Dùng <kbd>←</kbd> <kbd>→</kbd> hoặc nút Trước / Tiếp; <kbd>F</kbd> toàn màn hình; vuốt trái / phải trên điện thoại. Màn hình hẹp tự chuyển sang dạng cuộn và vẫn có thanh thuyết minh ở đáy.</div>
+    <div class="note"><b>Thuyết minh âm thanh</b>Bấm <kbd>▶ Phát</kbd> trên thanh dưới slide (hoặc <kbd>P</kbd>). Đọc xong tự chuyển slide; chỉnh tốc độ 0,9–1,4×; nút 📝 hiện lời đọc.</div>
+    <div class="note"><b>Lưu ý về giọng đọc</b>Dùng Google Translate TTS nên cần Internet; nội dung lời đọc được gửi tới Google. Không gửi thông tin người học.</div>
+    <div class="note"><b>Cài lên iPhone</b>Mở trang bằng Safari, bấm nút Chia sẻ rồi chọn <kbd>Thêm vào MH chính</kbd>. Sau khi mở một lần, slide, flashcard và quiz dùng được khi không có mạng; giọng đọc vẫn cần Internet.</div>
+  </div>
+
+  <footer>Tài liệu đào tạo biên soạn bằng tiếng Việt dựa trên quy chuẩn chính thức của Bộ Nông Lâm Thủy sản Nhật Bản (MAFF). Khi áp dụng thực tế, doanh nghiệp cần đối chiếu trực tiếp với các thông tư và hướng dẫn của Tổ chức Chứng nhận (CB) chỉ định.</footer>
+</div>
 
 <script>
   var MODULES = [
-    { file: 'slides/01-tong-quan.html', title: 'Module 1: Tổng quan Hệ thống Chứng nhận JAS', desc: 'Khung pháp lý MAFF, triết lý hữu cơ, cơ chế tổ chức CB và vai trò phân hạng độc lập của Grading Manager.', slides: 13, color: '#059669', art: 'slides/art/01-tong-quan.svg' },
-    { file: 'slides/02-canh-tac.html', title: 'Module 2: Canh tác Thực vật Hữu cơ (JAS 1605)', desc: 'Quy chuẩn đất đai, thời gian chuyển đổi 2–3 năm, thiết lập vùng đệm cách ly, nguồn giống Non-GMO và quản lý đồng ruộng.', slides: 15, color: '#15803d', art: 'slides/art/02-canh-tac.svg' },
-    { file: 'slides/03-vat-tu-nam.html', title: 'Module 3: Phân bón, Hoá chất & Nấm Hữu cơ', desc: 'Danh mục phân bón Bảng 1, thuốc BVTV sinh học Bảng 2, quy chuẩn giá thể mùn cưa và thanh trùng nhiệt cho nấm ăn.', slides: 15, color: '#d97706', art: 'slides/art/03-vat-tu-nam.svg' },
-    { file: 'slides/04-che-bien.html', title: 'Module 4: Chế biến Thực phẩm Hữu cơ (JAS 1606)', desc: 'Nguyên tắc tỷ lệ thành phần hữu cơ ≥ 95%, phụ gia Bảng 1, cấm chiếu xạ ion hoá & GMO, mẻ xả đầu Purge batch trên dây chuyền.', slides: 16, color: '#2563eb', art: 'slides/art/04-che-bien.svg' },
-    { file: 'slides/05-ghi-nhan.html', title: 'Module 5: Quy định Ghi nhãn & Dấu JAS Hữu cơ', desc: 'Thông báo số 24 (sửa đổi 2024), 3 thành tố bắt buộc của con dấu JAS, tên gọi tiếng Nhật hợp lệ và quy định nhãn 70–95%.', slides: 15, color: '#dc2626', art: 'slides/art/05-ghi-nhan.svg' },
-    { file: 'slides/06-tieu-chuan-ky-thuat.html', title: 'Module 6: Tiêu chuẩn Kỹ thuật Cơ sở Vận hành', desc: 'Năng lực vận hành của PPM, Re-packer và Importer; tính độc lập của Grading Manager, hệ thống SOP và đánh giá nội bộ.', slides: 15, color: '#7c3aed', art: 'slides/art/06-tieu-chuan-ky-thuat.svg' },
-    { file: 'slides/07-thanh-tra.html', title: 'Module 7: Phương pháp Thanh tra Hiện trường', desc: 'Quy trình 5 bước theo Thông báo số 28, kiểm tra thực địa, thẩm tra chéo tam giác dữ liệu, lấy mẫu thử nghiệm và khắc phục CAPA.', slides: 14, color: '#0891b2', art: 'slides/art/07-thanh-tra.svg' },
-    { file: 'slides/08-can-doi-khoi-luong.html', title: 'Module 8: Cân đối Khối lượng & Truy xuất Nguồn gốc', desc: 'Kiểm toán toán học Mass Balance, định mức hao hụt BOM, lưu hồ sơ tối thiểu 3 năm, diễn tập thu hồi và 10 điểm vàng thanh tra.', slides: 14, color: '#ea580c', art: 'slides/art/08-can-doi-khoi-luong.svg' }
+    { file: 'slides/01-tong-quan.html', title: 'Tổng quan Hệ thống Chứng nhận JAS Hữu cơ', desc: 'Khung pháp lý MAFF, triết lý hữu cơ, các bên liên quan và vai trò phân hạng độc lập của Grading Manager.', slides: 13, color: '#059669', art: 'slides/art/01-tong-quan.svg' },
+    { file: 'slides/02-canh-tac.html', title: 'Canh tác Nông sản Thực vật Hữu cơ (JAS 1605)', desc: 'Yêu cầu đất đai, thời gian chuyển đổi 2–3 năm, thiết lập vùng đệm cách ly, nguồn giống Non-GMO và quản lý đồng ruộng.', slides: 15, color: '#15803d', art: 'slides/art/02-canh-tac.svg' },
+    { file: 'slides/03-vat-tu-nam.html', title: 'Phân bón, Hoá chất Cho Phép & Quy Định Nấm Hữu Cơ', desc: 'Danh mục phân bón Bảng 1, thuốc BVTV sinh học Bảng 2, quy chuẩn giá thể mùn cưa và thanh trùng nhiệt cho nấm ăn.', slides: 15, color: '#d97706', art: 'slides/art/03-vat-tu-nam.svg' },
+    { file: 'slides/04-che-bien.html', title: 'Chế biến Thực phẩm Hữu cơ (JAS 1606)', desc: 'Nguyên tắc tỷ lệ thành phần hữu cơ ≥ 95%, phụ gia Bảng 1, cấm chiếu xạ ion hoá & GMO, mẻ xả đầu Purge batch trên dây chuyền.', slides: 16, color: '#2563eb', art: 'slides/art/04-che-bien.svg' },
+    { file: 'slides/05-ghi-nhan.html', title: 'Quy định Ghi nhãn & Sử dụng Dấu JAS Hữu cơ', desc: 'Thông báo số 24 (sửa đổi 2024), 3 thành tố bắt buộc của con dấu JAS, tên gọi tiếng Nhật hợp lệ và quy định nhãn 70–95%.', slides: 15, color: '#dc2626', art: 'slides/art/05-ghi-nhan.svg' },
+    { file: 'slides/06-tieu-chuan-ky-thuat.html', title: 'Tiêu chuẩn Kỹ thuật Cơ sở Chế biến, Đóng gói & Nhập khẩu', desc: 'Năng lực vận hành của PPM, Re-packer và Importer; tính độc lập của Grading Manager, hệ thống SOP và đánh giá nội bộ.', slides: 15, color: '#7c3aed', art: 'slides/art/06-tieu-chuan-ky-thuat.svg' },
+    { file: 'slides/07-thanh-tra.html', title: 'Phương pháp Thanh tra & Thẩm tra Chứng nhận JAS', desc: 'Quy trình 5 bước theo Thông báo số 28, kiểm tra thực địa, thẩm tra chéo tam giác dữ liệu, lấy mẫu thử nghiệm và khắc phục CAPA.', slides: 14, color: '#0891b2', art: 'slides/art/07-thanh-tra.svg' },
+    { file: 'slides/08-can-doi-khoi-luong.html', title: 'Cân đối Khối lượng, Truy xuất Nguồn gốc & Quản lý Tuân thủ', desc: 'Kiểm toán toán học Mass Balance, định mức hao hụt BOM, lưu hồ sơ tối thiểu 3 năm, diễn tập thu hồi và 10 điểm vàng thanh tra.', slides: 14, color: '#ea580c', art: 'slides/art/08-can-doi-khoi-luong.svg' }
   ];
 
-  var container = document.getElementById('mod-container');
-  var frame = document.getElementById('slide-frame');
-  var curTitle = document.getElementById('cur-mod-title');
-  var curDesc = document.getElementById('cur-mod-desc');
-  var linkDirect = document.getElementById('link-direct');
-  var linkStudy = document.getElementById('link-mod-study');
+  var sel = document.getElementById('moduleSelect');
+  var frame = document.getElementById('deckFrame');
+  var openBtn = document.getElementById('openBtn');
+  var descEl = document.getElementById('moduleDesc');
+  var list = document.getElementById('moduleList');
 
-  var currentIdx = 0;
-  try {
-    var saved = localStorage.getItem('jas_module');
-    if (saved !== null) currentIdx = parseInt(saved, 10) || 0;
-  } catch (e) {}
-  if (currentIdx < 0 || currentIdx >= MODULES.length) currentIdx = 0;
-
-  function renderModules() {
-    var html = '';
-    MODULES.forEach(function (m, i) {
-      var activeCls = (i === currentIdx) ? ' active' : '';
-      html += '<div class="mod-card' + activeCls + '" data-idx="' + i + '">';
-      html += '  <div class="mod-thumb"><img src="' + m.art + '" alt=""></div>';
-      html += '  <div class="mod-info">';
-      html += '    <div class="idx">Module ' + (i + 1) + ' · ' + m.slides + ' slide</div>';
-      html += '    <h3>' + m.title.replace(/^Module \d+:\s*/, '') + '</h3>';
-      html += '    <div class="meta-txt">' + m.desc + '</div>';
-      html += '  </div>';
-      html += '</div>';
-    });
-    container.innerHTML = html;
-
-    var cards = container.querySelectorAll('.mod-card');
-    cards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        var idx = parseInt(card.getAttribute('data-idx'), 10);
-        selectModule(idx);
-      });
-    });
+  function theme() {
+    var forced = document.documentElement.getAttribute('data-theme');
+    if (forced) return forced;
+    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  function selectModule(idx) {
-    currentIdx = idx;
-    try { localStorage.setItem('jas_module', idx); } catch (e) {}
+  MODULES.forEach(function (m, i) {
+    var o = document.createElement('option');
+    o.value = i;
+    o.textContent = 'Module ' + (i + 1) + ' · ' + m.title + ' (' + m.slides + ' slide)';
+    sel.appendChild(o);
 
-    var m = MODULES[idx];
-    curTitle.textContent = m.title;
-    curDesc.textContent = m.desc;
-    linkDirect.href = m.file;
-    linkStudy.href = 'on-tap.html#m' + (idx + 1);
-
-    var theme = document.documentElement.getAttribute('data-theme') || 'light';
-    frame.src = m.file + '?theme=' + theme;
-
-    renderModules();
-  }
-
-  renderModules();
-  selectModule(currentIdx);
-
-  // Theme toggle
-  var btnTheme = document.getElementById('btn-theme');
-  function initTheme() {
-    var t = 'light';
-    try { t = localStorage.getItem('jas_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch (e) {}
-    document.documentElement.setAttribute('data-theme', t);
-  }
-  initTheme();
-
-  btnTheme.addEventListener('click', function () {
-    var cur = document.documentElement.getAttribute('data-theme');
-    var next = (cur === 'dark') ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('jas_theme', next); } catch (e) {}
-    selectModule(currentIdx);
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mod';
+    b.style.setProperty('--c', m.color);
+    b.innerHTML = '<span class="n"><img src="' + m.art + '" alt=""></span><span><h3></h3><p></p><small>Module ' + (i + 1) + ' · ' + m.slides + ' slide</small></span>';
+    b.querySelector('h3').textContent = m.title;
+    b.querySelector('p').textContent = m.desc;
+    b.addEventListener('click', function () { select(i); document.querySelector('.viewer').scrollIntoView({ behavior: 'smooth' }); });
+    list.appendChild(b);
   });
+  document.getElementById('totalSlides').textContent = MODULES.reduce(function (s, m) { return s + m.slides; }, 0);
+
+  function select(i) {
+    var m = MODULES[i];
+    sel.value = i;
+    frame.src = m.file + '?theme=' + theme();
+    openBtn.href = m.file;
+    document.getElementById('fcBtn').href = 'on-tap.html#m' + (i + 1);
+    document.getElementById('quizBtn').href = 'on-tap.html#m' + (i + 1) + '-quiz';
+    descEl.textContent = m.desc;
+    Array.prototype.forEach.call(list.children, function (b, k) { b.setAttribute('aria-current', String(k === i)); });
+    try { localStorage.setItem('jas_module', i); } catch (e) {}
+    if (history.replaceState) history.replaceState(null, '', '#m' + (i + 1));
+  }
+
+  sel.addEventListener('change', function () { select(Number(sel.value)); });
+  document.getElementById('playBtn').addEventListener('click', function () {
+    try { frame.contentWindow.postMessage({ type: 'pt-play' }, location.origin); } catch (e) {}
+    frame.focus();
+  });
+
+  var fromHash = /^#m(\d)/.exec(location.hash);
+  var saved = null;
+  try { saved = localStorage.getItem('jas_module'); } catch (e) {}
+  var startIdx = fromHash ? Number(fromHash[1]) - 1 : (saved !== null ? Number(saved) : 0);
+  select(startIdx >= 0 && startIdx < MODULES.length ? startIdx : 0);
 </script>
 <script src="pwa.js"></script>
 </body>

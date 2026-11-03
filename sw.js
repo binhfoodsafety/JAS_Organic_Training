@@ -1,5 +1,5 @@
 // Service Worker cho JAS Organic Training — Lưu trữ ngoại tuyến
-var CACHE = 'jas-organic-v1';
+var CACHE = 'jas-organic-v2';
 var PREFIX = 'jas-organic-';
 
 var FILES = [
