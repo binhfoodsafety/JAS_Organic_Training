@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="24" fill="url(#g8)"/>
+  <!-- Balance scale -->
+  <g transform="translate(300, 220)">
+    <!-- Base and stand -->
+    <rect x="-10" y="-100" width="20" height="150" fill="#cbd5e1" rx="6"/>
+    <polygon points="-70,50 70,50 40,30 -40,30" fill="#94a3b8"/>
+    <circle cx="0" cy="-100" r="14" fill="#f97316"/>
+    <!-- Beam -->
+    <line x1="-150" y1="-90" x2="150" y2="-90" stroke="#f1f5f9" stroke-width="8" stroke-linecap="round"/>
+    <!-- Left pan (Input) -->
+    <line x1="-150" y1="-90" x2="-180" y2="-20" stroke="#e2e8f0" stroke-width="3"/>
+    <line x1="-150" y1="-90" x2="-120" y2="-20" stroke="#e2e8f0" stroke-width="3"/>
+    <path d="M-200,-20 Q-150,10 -100,-20 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="3"/>
+    <text x="-150" y="-35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">ĐẦU VÀO</text>
+    <!-- Right pan (Output + Waste) -->
+    <line x1="150" y1="-90" x2="120" y2="-20" stroke="#e2e8f0" stroke-width="3"/>
+    <line x1="150" y1="-90" x2="180" y2="-20" stroke="#e2e8f0" stroke-width="3"/>
+    <path d="M100,-20 Q150,10 200,-20 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="3"/>
+    <text x="150" y="-35" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">ĐẦU RA + HAO HỤT</text>
+  </g>
+  <text x="300" y="55" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">CÂN ĐỐI KHỐI LƯỢNG & TRUY XUẤT NGUỒN GỐC</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="24" fill="url(#g6)"/>
+  <!-- 3 Pillars -->
+  <g transform="translate(120, 200)">
+    <rect x="-70" y="-90" width="140" height="180" rx="14" fill="#ffffff" stroke="#c4b5fd" stroke-width="4"/>
+    <circle cx="0" cy="-40" r="28" fill="#ede9fe"/>
+    <text x="0" y="-32" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#6d28d9" text-anchor="middle">PPM</text>
+    <text x="0" y="10" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1e1b4b" text-anchor="middle">Nhà chế biến</text>
+    <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#4b5563" text-anchor="middle">• Quản lý SX</text>
+    <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#4b5563" text-anchor="middle">• Quản lý phân hạng</text>
+  </g>
+  <g transform="translate(300, 200)">
+    <rect x="-70" y="-90" width="140" height="180" rx="14" fill="#ffffff" stroke="#c4b5fd" stroke-width="4"/>
+    <circle cx="0" cy="-40" r="28" fill="#ede9fe"/>
+    <text x="0" y="-32" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#6d28d9" text-anchor="middle">PACK</text>
+    <text x="0" y="10" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1e1b4b" text-anchor="middle">Tái đóng gói</text>
+    <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#4b5563" text-anchor="middle">• Giữ nguyên lô</text>
+    <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#4b5563" text-anchor="middle">• Dán tem lại</text>
+  </g>
+  <g transform="translate(480, 200)">
+    <rect x="-70" y="-90" width="140" height="180" rx="14" fill="#ffffff" stroke="#c4b5fd" stroke-width="4"/>
+    <circle cx="0" cy="-40" r="28" fill="#ede9fe"/>
+    <text x="0" y="-32" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#6d28d9" text-anchor="middle">IMPORT</text>
+    <text x="0" y="10" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1e1b4b" text-anchor="middle">Nhà nhập khẩu</text>
+    <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#4b5563" text-anchor="middle">• Chứng từ CO</text>
+    <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#4b5563" text-anchor="middle">• Kiểm tra nhãn</text>
+  </g>
+  <text x="300" y="55" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">TIÊU CHUẨN KỸ THUẬT ĐƠN VỊ VẬN HÀNH</text>
+</svg>

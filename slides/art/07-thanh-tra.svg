@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#164e63"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="24" fill="url(#g7)"/>
+  <!-- Inspection Clipboard & Magnifier -->
+  <g transform="translate(220, 210)">
+    <!-- Clipboard -->
+    <rect x="-80" y="-110" width="160" height="210" rx="14" fill="#ffffff"/>
+    <rect x="-35" y="-125" width="70" height="25" rx="6" fill="#cbd5e1"/>
+    <!-- Checklist items -->
+    <circle cx="-50" cy="-60" r="8" fill="#10b981"/>
+    <rect x="-30" y="-64" width="80" height="8" rx="4" fill="#94a3b8"/>
+    <circle cx="-50" cy="-20" r="8" fill="#10b981"/>
+    <rect x="-30" y="-24" width="80" height="8" rx="4" fill="#94a3b8"/>
+    <circle cx="-50" cy="20" r="8" fill="#10b981"/>
+    <rect x="-30" y="16" width="80" height="8" rx="4" fill="#94a3b8"/>
+    <circle cx="-50" cy="60" r="8" fill="#f59e0b"/>
+    <rect x="-30" y="56" width="60" height="8" rx="4" fill="#94a3b8"/>
+  </g>
+  <!-- Magnifying glass -->
+  <g transform="translate(400, 200)">
+    <circle cx="0" cy="0" r="65" fill="#ecfeff" stroke="#06b6d4" stroke-width="10"/>
+    <line x1="46" y1="46" x2="100" y2="100" stroke="#0891b2" stroke-width="16" stroke-linecap="round"/>
+    <text x="0" y="8" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0e7490" text-anchor="middle">AUDIT</text>
+  </g>
+  <text x="300" y="55" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">PHƯƠNG PHÁP THANH TRA & THẨM TRA HIỆN TRƯỜNG</text>
+</svg>

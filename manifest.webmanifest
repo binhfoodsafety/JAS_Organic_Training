@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Tiêu chuẩn JAS Hữu cơ Nhật Bản",
+  "short_name": "JAS Organic",
+  "description": "Khoá học Tiêu chuẩn Nông nghiệp Hữu cơ Nhật Bản (JAS): slide bài giảng, flashcard, quiz và bảng kiểm tra tuân thủ.",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0fdf4",
+  "theme_color": "#064e3b",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

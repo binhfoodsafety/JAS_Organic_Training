@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>JAS 8 · Cân đối Khối lượng, Truy xuất Nguồn gốc & Quản lý Tuân thủ</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../icons/favicon-48.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#ea580c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body class="m8" data-module="JAS · Module 8 — Cân đối Khối lượng, Truy xuất Nguồn gốc & Quản lý Tuân thủ">
+<div class="deck">
+
+  <!-- Slide 1: Bìa -->
+  <section class="slide title">
+    <div class="hero-art"><img src="art/08-can-doi-khoi-luong.svg" alt="Cân đối khối lượng và truy xuất"></div>
+    <div class="eyebrow">Japanese Agricultural Standards · Module 8</div>
+    <h1>Cân đối Khối lượng, Truy xuất Nguồn gốc & Quản lý Tuân thủ</h1>
+    <div class="sub">Phương pháp toán học Mass Balance, định mức hao hụt, thời hạn lưu hồ sơ và quy trình thu hồi khẩn cấp.</div>
+    <div class="meta"><span class="chip">Cân đối Mass Balance</span><span class="chip">Định mức BOM</span><span class="chip">Lưu trữ 3 năm</span><span class="chip">Quy trình thu hồi</span></div>
+    <div class="say">Chào mừng bạn đến với Module 8, module tổng kết của khoá học. Trong phần này, chúng ta sẽ làm chủ công cụ kiểm toán cốt lõi nhất của chuyên gia đánh giá JAS: Phương pháp cân đối khối lượng Mass Balance, cách kiểm soát định mức hao hụt, thời hạn lưu trữ hồ sơ và quy trình thu hồi sản phẩm khi có sự cố.</div>
+  </section>
+
+  <!-- Slide 2: Tại sao phải cân đối khối lượng? -->
+  <section class="slide has-art">
+    <img class="corner-art" src="art/08-can-doi-khoi-luong.svg" alt="">
+    <h2>1. Bản Chất Của Kiểm Toán Cân Đối Khối Lượng</h2>
+    <div class="body">
+      <div class="cards" style="--n:2">
+        <div class="card">
+          <h3>Mục tiêu kiểm toán</h3>
+          <p>Xác nhận bằng số liệu toán học rằng <b>khối lượng sản phẩm hữu cơ bán ra không vượt quá khối lượng nguyên liệu hữu cơ thực tế đưa vào sản xuất</b> (sau khi đã tính hao hụt).</p>
+        </div>
+        <div class="card warn">
+          <h3>Ngăn chặn gian lận thương mại</h3>
+          <p>Đây là công cụ hữu hiệu nhất để bóc trần hành vi "thổi phồng" sản lượng hữu cơ, hoặc hành vi mua hàng thông thường trôi nổi bên ngoài về trà trộn đóng gói dán tem JAS.</p>
+        </div>
+      </div>
+      <div class="statement">"Số liệu không biết nói dối" — Cân đối khối lượng là bằng chứng đanh thép nhất bảo vệ sự trung thực của doanh nghiệp hữu cơ.</div>
+    </div>
+    <div class="say">Kiểm toán cân đối khối lượng hay Mass Balance là bài toán số học bắt buộc: tổng lượng thành phẩm hữu cơ xuất bán cộng với tồn kho và hao hụt phải luôn bằng hoặc nhỏ hơn lượng nguyên liệu hữu cơ nhập kho. Bất kỳ sự chênh lệch thừa nào cũng bị nghi ngờ là trà trộn hàng giả.</div>
+  </section>
+
+  <!-- Slide 3: Phương trình cân đối khối lượng -->
+  <section class="slide">
+    <h2>2. Phương Trình Cân Đối Khối Lượng Cơ Bản</h2>
+    <div class="body">
+      <div class="formula">
+        <span>Nguyên liệu hữu cơ nhập</span> <em>=</em> <span>Thành phẩm hữu cơ tạo ra</span> <em>+</em> <span>Hao hụt sản xuất</span> <em>+</em> <span>Chênh lệch tồn kho</span>
+      </div>
+      <div class="cards" style="--n:3">
+        <div class="card">
+          <h3>Thành phẩm hữu cơ (Output)</h3>
+          <p>Khối lượng thành phẩm đã đóng gói dán tem JAS xuất bán hoặc đang nằm trong kho thành phẩm chờ giao dịch.</p>
+        </div>
+        <div class="card">
+          <h3>Hao hụt kỹ thuật (Waste / Loss)</h3>
+          <p>Hao hụt nước do sấy khô, phần cuống lá loại bỏ, bụi phát sinh, và mẻ xả đầu vệ sinh đường ống (Purge batch).</p>
+        </div>
+        <div class="card">
+          <h3>Tồn kho thực tế (Stock)</h3>
+          <p>Số lượng nguyên liệu còn dư trong kho tại thời điểm đối chiếu (Tồn cuối kỳ − Tồn đầu kỳ).</p>
+        </div>
+      </div>
+    </div>
+    <div class="say">Phương trình cân đối khối lượng gồm ba thành tố đầu ra: thành phẩm đã dán tem, tổng hao hụt kỹ thuật được ghi chép, và lượng nguyên liệu tồn kho thực tế. Ba yếu tố này cộng lại phải khớp chính xác với khối lượng nguyên liệu đầu vào.</div>
+  </section>
+
+  <!-- Slide 4: Xác lập định mức hao hụt BOM -->
+  <section class="slide has-art">
+    <img class="corner-art" src="art/08-can-doi-khoi-luong.svg" alt="">
+    <h2>3. Thiết Lập Định Mức Hao Hụt Kỹ Thuật (BOM)</h2>
+    <div class="body side">
+      <div class="side-text">
+        <div class="statement">Định mức hao hụt phải được chứng minh bằng thực nghiệm sản xuất<small>Không được tự ý phỏng đoán hoặc bịa số liệu hao hụt trên giấy tờ.</small></div>
+        <ul>
+          <li><b>Hao hụt phân loại (Sorting loss):</b> Tạp chất, đất cát, lá héo nhặt bỏ (thường từ 2%–5% tuỳ mùa vụ).</li>
+          <li><b>Hao hụt bay hơi (Evaporation loss):</b> Tỷ lệ thoát nước khi sấy nhiệt hoặc cô đặc (VD: sấy chè từ búp tươi sang chè khô có tỷ lệ 4,2:1, tức hao hụt ẩm khoảng 76%).</li>
+          <li><b>Hao hụt cơ học (Mechanical loss):</b> Dính cối xay, máy đóng gói tự động (thường 0,5%–1,5%).</li>
+          <li><b>Hồ sơ phê duyệt BOM:</b> Bảng định mức kỹ thuật phải do Giám đốc Kỹ thuật phê duyệt và nộp cho Tổ chức CB lưu hồ sơ.</li>
+        </ul>
+      </div>
+      <div class="side-art"><img src="art/08-can-doi-khoi-luong.svg" alt=""></div>
+    </div>
+    <div class="say">Định mức hao hụt trong chế biến phải được xác định qua thực nghiệm thực tế và lập thành bảng định mức BOM chính thức. Bạn không thể giải trình một mức hao hụt bất thường mà không có biên bản kiểm tra thử nghiệm lưu kèm trong hồ sơ.</div>
+  </section>
+
+  <!-- Slide 5: Bài tập thực hành tình huống Mass Balance -->
+  <section class="slide">
+    <h2>4. Bài Tập Tình Huống Cân Đối Khối Lượng Thực Tế</h2>
+    <div class="body">
+      <div class="cols">
+        <div>
+          <h3>Dữ liệu đầu vào của nhà máy:</h3>
+          <ul>
+            <li>Thu mua chè búp tươi hữu cơ: <b>10.000 kg</b></li>
+            <li>Định mức sấy khô: Tỷ lệ <b>4:1</b> (100 kg tươi được 25 kg khô; hao hụt bốc hơi nước 75%).</li>
+            <li>Hao hụt nghiền và đóng gói túi lọc: <b>2%</b>.</li>
+            <li>Quy cách đóng hộp: <b>50 g/hộp</b>.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="callout">
+            <h3>Các bước tính toán của QA:</h3>
+            <p>1. Khối lượng chè khô sau sấy = 10.000 ÷ 4 = <b>2.500 kg</b></p>
+            <p>2. Chè khô sau hao hụt đóng gói = 2.500 × (1 − 0,02) = <b>2.450 kg</b></p>
+            <p>3. Số hộp tối đa được dán tem JAS = 2.450 kg ÷ 0,05 kg = <b>49.000 hộp</b></p>
+            <p>$ightarrow$ Nếu nhà máy xuất bán <b>52.000 hộp</b>: <b>BỊ XẾP LỖI NẶNG</b> do xuất dư 3.000 hộp không rõ nguồn gốc!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="say">Hãy xem ví dụ thực tế này: với mười nghìn cân chè búp tươi, sau khi sấy và đóng gói với tỷ lệ hao hụt kỹ thuật, sản lượng tối đa chỉ là bốn mươi chín nghìn hộp. Nếu doanh nghiệp xuất bán năm mươi hai nghìn hộp, sự chênh lệch ba nghìn hộp dư thừa này sẽ ngay lập tức bị quy vào hành vi gian lận và đình chỉ chứng chỉ.</div>
+  </section>
+
+  <!-- Slide 6: Truy xuất nguồn gốc xuôi và ngược -->
+  <section class="slide has-art">
+    <img class="corner-art" src="art/08-can-doi-khoi-luong.svg" alt="">
+    <h2>5. Kỹ Thuật Truy Xuất Hai Chiều (Traceability)</h2>
+    <div class="body">
+      <div class="cards" style="--n:2">
+        <div class="card">
+          <h3>Truy xuất ngược (Trace back)</h3>
+          <p>Từ một hộp thành phẩm bày bán trên kệ tại Tokyo $ightarrow$ Lần ngược lại mã lô sản xuất $ightarrow$ Ngày giờ đóng gói $ightarrow$ Dây chuyền chế biến $ightarrow$ Nông dân và thửa ruộng cụ thể đã thu hoạch búp chè đó.</p>
+        </div>
+        <div class="card">
+          <h3>Truy xuất xuôi (Trace forward)</h3>
+          <p>Từ một mẻ nguyên liệu phát hiện bị nhiễm thuốc trừ sâu $ightarrow$ Rà soát toàn bộ các mẻ đã trộn $ightarrow$ Xác định chính xác các số lô thành phẩm bị ảnh hưởng $ightarrow$ Khoanh vùng phân phối để thu hồi ngay.</p>
+        </div>
+      </div>
+      <div class="callout small">Tiêu chuẩn thực hành: Diễn tập truy xuất thành công một lô hàng bất kỳ trong vòng <b>không quá 4 giờ làm việc</b>.</div>
+    </div>
+    <div class="say">Hệ thống truy xuất nguồn gốc phải vận hành trơn tru theo cả hai chiều: lần ngược từ gói thành phẩm về tận thửa ruộng ban đầu, và lần xuôi từ nguồn nguyên liệu ra các đại lý phân phối. Mục tiêu là truy vết xong một lô hàng trong vòng bốn tiếng đồng hồ.</div>
+  </section>
+
+  <!-- Slide 7: Hệ thống hồ sơ và thời hạn lưu trữ -->
+  <section class="slide">
+    <h2>6. Thời Hạn Lưu Trữ Hồ Sơ Theo Tiêu Chuẩn JAS</h2>
+    <div class="body side">
+      <div class="side-text">
+        <div class="statement">Hồ sơ chứng nhận JAS bắt buộc phải lưu trữ tối thiểu 3 năm<small>Hoặc bằng hạn sử dụng của sản phẩm cộng thêm 1 năm (tuỳ điều kiện nào dài hơn).</small></div>
+        <ul>
+          <li><b>Hồ sơ nông trại (JAS 1605):</b> Bản đồ quy hoạch, nhật ký nông vụ, biên lai mua vật tư, kết quả thử nghiệm mẫu đất/nước.</li>
+          <li><b>Hồ sơ chế biến (JAS 1606):</b> Báo cáo sản xuất từng mẻ, nhật ký CIP, kết quả kiểm tra pH, sổ giao nhận tem JAS.</li>
+          <li><b>Hồ sơ chứng từ thương mại:</b> Hợp đồng, hoá đơn đỏ, vận đơn B/L, phiếu xuất kho, chứng nhận COI xuất khẩu.</li>
+          <li><b>Hình thức lưu trữ:</b> Được phép lưu bản giấy có chữ ký tươi hoặc bản điện tử quét scan có sao lưu đám mây an toàn.</li>
+        </ul>
+      </div>
+      <div class="side-art"><img src="art/08-can-doi-khoi-luong.svg" alt=""></div>
+    </div>
+    <div class="say">Về thời hạn lưu trữ: mọi hồ sơ chứng từ liên quan đến JAS bắt buộc phải được lưu giữ tối thiểu ba năm. Bạn có thể lưu bản giấy hoặc lưu file số hoá trên máy tính, nhưng phải bảo đảm truy lục được ngay khi thanh tra viên yêu cầu.</div>
+  </section>
+
+  <!-- Slide 8: Kế hoạch thu hồi sản phẩm khẩn cấp -->
+  <section class="slide has-art">
+    <img class="corner-art" src="art/08-can-doi-khoi-luong.svg" alt="">
+    <h2>7. Kế Hoạch Thu Hồi Sản Phẩm Khẩn Cấp (Recall)</h2>
+    <div class="body">
+      <div class="flow" style="--n:4">
+        <div><b>1. Kích hoạt báo động</b>Đội phản ứng nhanh (Recall Team) họp khẩn khi nhận tin cảnh báo ô nhiễm chéo hoặc sai tem nhãn.</div>
+        <div><b>2. Phong toả kho nội bộ</b>Dừng ngay các đơn hàng đang chuẩn bị bốc dỡ, niêm phong toàn bộ sản phẩm cùng lô còn tại kho.</div>
+        <div><b>3. Thông báo CB & Khách hàng</b>Gửi văn bản thông báo chính thức cho Tổ chức Chứng nhận (CB) và đối tác nhập khẩu trong vòng <b>24 giờ</b>.</div>
+        <div><b>4. Thu hồi & Hủy tem</b>Thu gom sản phẩm từ các kênh phân phối, bóc hủy tem JAS, hạ cấp bán hàng thường hoặc tiêu hủy.</div>
+      </div>
+    </div>
+    <div class="say">Quy trình thu hồi sản phẩm khẩn cấp gồm bốn bước then chốt: kích hoạt đội phản ứng nhanh, phong tỏa hàng tồn kho, thông báo cho tổ chức chứng nhận và đối tác nhập khẩu trong 24 giờ, và thu gom sản phẩm để bóc hủy tem nhãn vi phạm.</div>
+  </section>
+
+  <!-- Slide 9: Diễn tập thu hồi định kỳ (Mock Recall) -->
+  <section class="slide">
+    <h2>8. Diễn Tập Thu Hồi Giả Định (Mock Recall)</h2>
+    <div class="body side">
+      <div class="side-text">
+        <div class="statement">Bắt buộc diễn tập thu hồi ít nhất 1 lần mỗi năm<small>Để chứng minh năng lực phản ứng nhanh của hệ thống khi có sự cố thật xảy ra.</small></div>
+        <ul>
+          <li><b>Chọn một lô hàng ngẫu nhiên:</b> Chọn một mã lô đã xuất khẩu sang Nhật cách đây 6 tháng.</li>
+          <li><b>Tính toán hiệu suất thu hồi (Recall Efficiency):</b>
+            <div class="formula">
+              <span>Hiệu suất thu hồi</span> <em>=</em> <span>(SL tồn kho + SL tại đại lý)</span> <em>÷</em> <span>Tổng SL đã xuất xưởng</span> <em>×</em> <span>100</span>
+            </div>
+          </li>
+          <li><b>Mục tiêu đạt chuẩn:</b> Xác định được vị trí của <b>100% số lượng sản phẩm</b> trong vòng không quá 2–4 giờ.</li>
+          <li><b>Lập báo cáo diễn tập:</b> Đánh giá thời gian phản hồi, các nút thắt chậm trễ và giải pháp cải tiến SOP.</li>
+        </ul>
+      </div>
+      <div class="side-art"><img src="art/08-can-doi-khoi-luong.svg" alt=""></div>
+    </div>
+    <div class="say">Mỗi năm cơ sở bắt buộc phải tổ chức ít nhất một cuộc diễn tập thu hồi giả định. Chọn ngẫu nhiên một lô hàng đã bán, kích hoạt tìm kiếm và xác định vị trí của một trăm phần trăm sản phẩm trong vòng bốn tiếng đồng hồ để nộp báo cáo cho tổ chức chứng nhận.</div>
+  </section>
+
+  <!-- Slide 10: Xử lý khiếu nại của khách hàng -->
+  <section class="slide has-art">
+    <img class="corner-art" src="art/08-can-doi-khoi-luong.svg" alt="">
+    <h2>9. Quy Trình Xử Lý Khiếu Nại Chất Lượng</h2>
+    <div class="body">
+      <div class="cols">
+        <div>
+          <h3>Tiếp nhận & Phân loại khiếu nại</h3>
+          <ul>
+            <li>Ghi nhận vào Sổ theo dõi khiếu nại khách hàng trong vòng 24 giờ.</li>
+            <li>Thu thập bằng chứng: ảnh chụp bao bì, mã số lô, mẫu vật có dị vật hoặc dấu hiệu bất thường.</li>
+            <li>Đối chiếu mẫu lưu đối chứng (Retention sample) tại phòng QA của cơ sở.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Điều tra & Báo cáo kết quả</h3>
+          <ul>
+            <li>Kiểm tra nhật ký sản xuất và hồ sơ vệ sinh của ngày đóng gói lô hàng đó.</li>
+            <li>Xác định nguyên nhân: lỗi do sản xuất, bao bì hay bảo quản tại siêu thị?</li>
+            <li>Phản hồi bằng văn bản giải trình và biện pháp khắc phục thoả đáng cho khách hàng.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="say">Khi nhận khiếu nại chất lượng từ khách hàng Nhật Bản, phòng QA phải lập tức đối chiếu với mẫu lưu tại nhà máy, tra cứu nhật ký sản xuất của mẻ hàng, tìm nguyên nhân gốc rễ và gửi văn bản giải trình thỏa đáng cho đối tác.</div>
+  </section>
+
+  <!-- Slide 11: Mười điểm vàng sẵn sàng cho kỳ thanh tra -->
+  <section class="slide">
+    <h2>10. Mười Điểm Vàng Luôn Sẵn Sàng Thanh Tra</h2>
+    <div class="body">
+      <div class="cards" style="--n:2">
+        <div class="card">
+          <h3>Nhóm Hồ sơ & Dữ liệu</h3>
+          <ul>
+            <li>1. Nhật ký canh tác/chế biến ghi chép thời gian thực, không ghi hồi tố.</li>
+            <li>2. Bảng cân đối khối lượng Mass Balance khớp đến từng kilogam.</li>
+            <li>3. Sổ theo dõi tem nhãn JAS khớp với số lượng phân hạng.</li>
+            <li>4. Chứng chỉ hữu cơ của nhà cung cấp nguyên liệu còn hạn hiệu lực.</li>
+            <li>5. Hồ sơ đào tạo nhân viên và bằng cấp của Grading Manager.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Nhóm Hiện trường & Kỹ thuật</h3>
+          <ul>
+            <li>6. Vùng đệm cách ly an toàn, không có nguy cơ trôi dạt hoá chất.</li>
+            <li>7. Kho vật tư sạch bóng, tuyệt đối không có phân thuốc hoá học cấm.</li>
+            <li>8. Quy trình mẻ xả đầu (Purge batch) được thực thi nghiêm túc.</li>
+            <li>9. Kiểm soát côn trùng dịch hại bằng bẫy cơ học, không xịt thuốc.</li>
+            <li>10. Báo cáo đánh giá nội bộ và khắc phục CAPA hoàn tất đúng hạn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="say">Mười điểm vàng sẵn sàng thanh tra được chia thành hai nhóm: năm điểm về tính minh bạch của sổ sách dữ liệu cân đối, và năm điểm về tính kỷ luật sạch sẽ tại hiện trường nhà xưởng và đồng ruộng. Hãy rà soát mười điểm này hàng tháng.</div>
+  </section>
+
+  <!-- Slide 12: Đạo đức nghề nghiệp trong ngành hữu cơ -->
+  <section class="slide has-art">
+    <img class="corner-art" src="art/08-can-doi-khoi-luong.svg" alt="">
+    <h2>11. Đạo Đức Nghề Nghiệp Trong Nông Nghiệp Hữu Cơ</h2>
+    <div class="body side">
+      <div class="side-text">
+        <div class="statement">Chứng nhận hữu cơ được xây dựng trên sự trung thực và niềm tin<small>Khi người tiêu dùng chọn mua một sản phẩm mang nhãn JAS, họ đang gửi gắm sức khỏe và niềm tin vào bạn.</small></div>
+        <ul>
+          <li><b>Không thoả hiệp với sai phạm:</b> Dù chỉ là một mẻ hàng nhỏ, nếu không đạt chuẩn hãy can đảm hạ cấp bán hàng thông thường.</li>
+          <li><b>Bảo vệ thương hiệu quốc gia:</b> Mỗi sản phẩm Việt Nam mang nhãn Organic JAS xuất sang Nhật là một đại sứ đại diện cho uy tín nông nghiệp Việt Nam trên trường quốc tế.</li>
+          <li><b>Cam kết phát triển bền vững:</b> Nông nghiệp hữu cơ không chỉ là thương mại — đó là hành trình bảo vệ đất mẹ, bảo vệ nguồn nước và để lại di sản màu mỡ cho thế hệ tương lai.</li>
+        </ul>
+      </div>
+      <div class="side-art"><img src="art/08-can-doi-khoi-luong.svg" alt=""></div>
+    </div>
+    <div class="say">Đạo đức nghề nghiệp là linh hồn của chứng nhận hữu cơ. Khách hàng trả giá cao cho sản phẩm hữu cơ vì họ trao trọn niềm tin cho bạn. Hãy luôn trung thực, không bao giờ vì lợi nhuận ngắn hạn mà đánh đổi uy tín của thương hiệu và niềm tự hào của nông sản Việt Nam.</div>
+  </section>
+
+  <!-- Slide 13: Lộ trình phát triển chuyên môn QA/QC Hữu cơ -->
+  <section class="slide">
+    <h2>12. Lộ Trình Phát Triển Chuyên Môn JAS</h2>
+    <div class="body">
+      <div class="flow" style="--n:4">
+        <div><b>1. Nắm vững tiêu chuẩn</b>Hiểu sâu sắc các điều khoản của JAS 1605, 1606, Thông báo 24 và Thông báo 28.</div>
+        <div><b>2. Thực hành phân hạng</b>Tích luỹ kinh nghiệm kiểm định thực tế, thẩm định hồ sơ mẻ và quản lý tem nhãn.</div>
+        <div><b>3. Đánh giá viên nội bộ</b>Chủ trì các đợt tự đánh giá hàng năm, dẫn dắt cải tiến các điểm yếu của hệ thống.</div>
+        <div><b>4. Chuyên gia tư vấn & Đánh giá</b>Đạt chứng chỉ chuyên gia đánh giá JAS quốc tế, hỗ trợ các vùng trồng vươn ra biển lớn.</div>
+      </div>
+    </div>
+    <div class="say">Để trở thành chuyên gia JAS hàng đầu, lộ trình bốn bước gồm: nắm vững tiêu chuẩn lý thuyết, làm chủ quy trình phân hạng thực tế, trở thành chuyên gia đánh giá nội bộ xuất sắc, và tiến tới chứng chỉ đánh giá viên hữu cơ quốc tế.</div>
+  </section>
+
+  <!-- Slide 14: Tóm tắt Module 8 & Bế mạc khoá học -->
+  <section class="slide">
+    <h2>Tổng Kết Toàn Bộ Khoá Học · JAS Organic</h2>
+    <div class="body">
+      <div class="cards" style="--n:4">
+        <div class="card">
+          <h3>Nông trại 1605</h3>
+          <p>Chuyển đổi 2–3 năm, bảo tồn đất, không hoá chất cấm, nguồn giống Non-GMO.</p>
+        </div>
+        <div class="card">
+          <h3>Nhà máy 1606</h3>
+          <p>Tỷ lệ hữu cơ $\ge 95\%$, không chiếu xạ, phụ gia Bảng 1, chống ô nhiễm chéo.</p>
+        </div>
+        <div class="card">
+          <h3>Ghi nhãn & Tem</h3>
+          <p>Dấu JAS chuẩn 3 thành tố, tên CB bắt buộc, chỉ dán tem khi $\ge 95\%$.</p>
+        </div>
+        <div class="card">
+          <h3>Cân đối & Lưu trữ</h3>
+          <p>Cân đối khối lượng Mass Balance khớp tuyệt đối, lưu hồ sơ tối thiểu 3 năm.</p>
+        </div>
+      </div>
+      <div class="statement">Chúc mừng bạn đã hoàn thành trọn vẹn 8 Module Tiêu Chuẩn JAS Hữu Cơ Nhật Bản! Hãy tiếp tục rèn luyện với phần Flashcard, Quiz và Công cụ thực hành.</div>
+    </div>
+    <div class="say">Xin chúc mừng bạn đã hoàn thành xuất sắc toàn bộ 8 module của khoá học Tiêu chuẩn JAS Hữu cơ Nhật Bản! Giờ đây bạn đã nắm vững toàn bộ khung kiến thức từ canh tác đồng ruộng, chế biến nhà máy, quy cách ghi nhãn cho đến kỹ năng kiểm toán cân đối khối lượng. Hãy bước sang phần Ôn tập để luyện tập Flashcard và trắc nghiệm kiến thức nhé!</div>
+  </section>
+
+
+</div>
+<script src="deck.js"></script>
+</body>
+</html>
