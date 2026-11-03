@@ -27,12 +27,18 @@
 <div class="wrap">
   <header>
     <div>
-      <a class="back" href="index.html">← Về khoá học</a>
-      <h1>Ôn tập theo module</h1>
+      <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+        <a class="back" href="index.html">← Về trang chủ</a>
+        <a class="back" href="cong-cu.html" style="color:var(--brand); font-weight:700;">🛠️ Công cụ thực hành</a>
+      </div>
+      <h1>Phòng Ôn tập: Flashcard & Quiz</h1>
     </div>
-    <div class="stats">
-      <div><b id="statKnown">0/0</b><span>Thẻ đã nhớ</span></div>
-      <div><b id="statBest">–</b><span>Quiz tốt nhất</span></div>
+    <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+      <div class="stats">
+        <div><b id="statKnown">0/0</b><span>Thẻ đã nhớ</span></div>
+        <div><b id="statBest">–</b><span>Quiz tốt nhất</span></div>
+      </div>
+      <button class="btn" id="themeBtn" type="button" style="min-height:36px; padding:6px 12px; font-size:13px;" title="Đổi giao diện sáng/tối">🌓 Giao diện</button>
     </div>
   </header>
 
@@ -106,6 +112,24 @@
 <script src="study/data.js"></script>
 <script src="study/say.js"></script>
 <script src="study/study.js"></script>
+<script>
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('jas_theme', t); } catch (e) {}
+  }
+  var savedT = 'light';
+  try {
+    savedT = localStorage.getItem('jas_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch (e) {}
+  applyTheme(savedT);
+  var tBtn = document.getElementById('themeBtn');
+  if (tBtn) {
+    tBtn.addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+  }
+</script>
 <script src="pwa.js"></script>
 </body>
 </html>

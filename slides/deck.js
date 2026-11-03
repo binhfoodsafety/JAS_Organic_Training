@@ -403,24 +403,44 @@
     x0 = null;
   });
 
-  // Hỗ trợ cuộn chuột (Mouse wheel) chuyển slide mượt mà
+  // Xử lý cuộn chuột thông minh và chuyển tiếp cho trang chủ cha
   var wheelHold = 0;
   window.addEventListener('wheel', function (e) {
-    if (document.body.classList.contains('reading')) return; // Dạng cuộn thì cuộn tự nhiên
+    var inIframe = window.parent && window.parent !== window;
+
+    // Nếu đang ở chế độ cuộn dọc (reading mode)
+    if (document.body.classList.contains('reading')) {
+      // Khi đã cuộn chạm đỉnh hoặc chạm đáy trong iframe, chuyển tiếp sự kiện cuộn cho trang chủ cha
+      if (inIframe) {
+        var atTop = (window.scrollY || window.pageYOffset || 0) <= 2 && e.deltaY < 0;
+        var atBottom = (window.innerHeight + (window.scrollY || window.pageYOffset || 0)) >= (document.documentElement.scrollHeight - 4) && e.deltaY > 0;
+        if (atTop || atBottom) {
+          try { window.parent.postMessage({ type: 'deck-scroll', deltaY: e.deltaY, deltaX: e.deltaX }, '*'); } catch (err) {}
+        }
+      }
+      return;
+    }
+
+    // Nếu đang nhúng trong iframe ở chế độ slide thông thường:
+    // Chuyển tiếp cuộn chuột lên trang chủ cha để người dùng cuộn xem toàn bộ trang web mượt mà!
+    if (inIframe) {
+      try {
+        window.parent.postMessage({ type: 'deck-scroll', deltaY: e.deltaY, deltaX: e.deltaX }, '*');
+      } catch (err) {}
+      return;
+    }
+
+    // Nếu đang mở tab riêng / toàn màn hình: Lăn chuột để chuyển slide tiếp / trước
     if (Date.now() < wheelHold) return;
     if (Math.abs(e.deltaY) > 25) {
-      if (e.deltaY > 0) {
-        if (idx < slides.length - 1) {
-          e.preventDefault();
-          wheelHold = Date.now() + 320;
-          show(idx + 1);
-        }
-      } else {
-        if (idx > 0) {
-          e.preventDefault();
-          wheelHold = Date.now() + 320;
-          show(idx - 1);
-        }
+      if (e.deltaY > 0 && idx < slides.length - 1) {
+        e.preventDefault();
+        wheelHold = Date.now() + 300;
+        show(idx + 1);
+      } else if (e.deltaY < 0 && idx > 0) {
+        e.preventDefault();
+        wheelHold = Date.now() + 300;
+        show(idx - 1);
       }
     }
   }, { passive: false });

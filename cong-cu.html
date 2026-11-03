@@ -27,9 +27,12 @@
     <div class="crumb"><a href="index.html">← Trang chủ bài giảng</a> · <a href="on-tap.html">Ôn tập Flashcard & Quiz</a></div>
     <h1>Công cụ Thực hành JAS Hữu cơ</h1>
     <p class="sub">Hỗ trợ cán bộ QA/QC và kiểm tra viên đánh giá tính tuân thủ tiêu chuẩn Nhật Bản.</p>
-    <div class="tabs" role="tablist">
-      <button type="button" role="tab" class="tab active" data-tab="checklist">📋 Checklist Tự Đánh Giá Tuân Thủ</button>
-      <button type="button" role="tab" class="tab" data-tab="calc">🧮 Máy Tính % Hữu Cơ & Cân Đối Khối Lượng</button>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="tab active" data-tab="checklist">📋 Checklist Tự Đánh Giá Tuân Thủ</button>
+        <button type="button" role="tab" class="tab" data-tab="calc">🧮 Máy Tính % Hữu Cơ & Cân Đối Khối Lượng</button>
+      </div>
+      <button type="button" id="themeBtn" class="tab" style="background:rgba(255,255,255,0.2); font-weight:700;" title="Đổi giao diện sáng/tối">🌓 Giao diện</button>
     </div>
   </div>
 </header>
@@ -126,6 +129,24 @@
   </div>
 </footer>
 
+<script>
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('jas_theme', t); } catch (e) {}
+  }
+  var savedT = 'light';
+  try {
+    savedT = localStorage.getItem('jas_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  } catch (e) {}
+  applyTheme(savedT);
+  var tBtn = document.getElementById('themeBtn');
+  if (tBtn) {
+    tBtn.addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      applyTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+  }
+</script>
 <script src="study/tools.js"></script>
 <script src="pwa.js"></script>
 </body>

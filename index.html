@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tiêu chuẩn JAS Hữu cơ Nhật Bản</title>
-<meta name="description" content="Khoá học Tiêu chuẩn Nông nghiệp Hữu cơ Nhật Bản (JAS) tiếng Việt: 8 module, có thuyết minh âm thanh, flashcard, quiz và checklist tuân thủ.">
+<meta name="description" content="Khoá học Tiêu chuẩn Nông nghiệp Hữu cơ Nhật Bản (JAS) tiếng Việt: 8 module bài giảng, thuyết minh giọng đọc, flashcard, quiz và checklist tuân thủ.">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -14,8 +14,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="JAS Organic">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta property="og:title" content="Tiêu chuẩn JAS Hữu cơ Nhật Bản">
-<meta property="og:description" content="Khoá học tiếng Việt: slide thuyết minh, flashcard, quiz và công cụ checklist tuân thủ.">
+<meta property="og:title" content="Tiêu chuẩn JAS Hữu cơ Nhật Bản (JAS Organic Training)">
+<meta property="og:description" content="Khoá học tiếng Việt: slide thuyết minh giọng đọc, flashcard, quiz và checklist tự đánh giá.">
 <meta property="og:image" content="https://binhfoodsafety.github.io/JAS_Organic_Training/icons/icon-512.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,67 +39,176 @@
     --brand: #34d399; --brand-soft: #13392c; --warn: #e0a060;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; }
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 28px 24px 48px; }
-  header { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-  .eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); font-weight: 700; }
-  h1 { margin: 4px 0 6px; font-size: clamp(26px, 4vw, 38px); line-height: 1.15; }
-  .lead { margin: 0; color: var(--ink-2); max-width: 720px; }
-  .stats { display: flex; gap: 22px; }
-  .stats b { display: block; font-size: 24px; color: var(--brand); font-variant-numeric: tabular-nums; }
-  .stats span { font-size: 12px; color: var(--muted); }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 24px 20px 48px; }
 
-  .viewer { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
-  .bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
-  .bar label { font-weight: 600; font-size: 14px; }
-  select, .btn { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 10px; padding: 9px 12px; min-height: 40px; }
-  select { flex: 1; min-width: 220px; max-width: 560px; cursor: pointer; }
-  .btn { cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 55%, #047857 100%);
+    color: #ffffff;
+    padding: 28px 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 24px rgba(6, 78, 59, 0.2);
+  }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #a7f3d0; font-weight: 700; margin-bottom: 6px; }
+  h1 { margin: 0 0 8px; font-size: clamp(24px, 3.8vw, 36px); line-height: 1.2; color: #ffffff; font-weight: 800; }
+  .lead { margin: 0; color: #ecfdf5; max-width: 760px; font-size: 15px; }
+  .stats { display: flex; gap: 20px; }
+  .stats b { display: block; font-size: 26px; color: #a7f3d0; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .stats span { font-size: 12px; color: #e2e8f0; font-weight: 600; }
+
+  /* Viewer Area */
+  .viewer {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 10px 32px rgba(0,0,0,.06);
+    margin-bottom: 32px;
+  }
+  .bar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .bar label { font-weight: 700; font-size: 14px; color: var(--ink); white-space: nowrap; }
+  select, .btn {
+    font: inherit;
+    font-size: 14px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-height: 40px;
+    transition: all .15s;
+  }
+  select { flex: 1; min-width: 220px; max-width: 480px; cursor: pointer; font-weight: 600; }
+  select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.18); }
+  .btn {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+  }
   .btn:hover { border-color: var(--brand); color: var(--brand); }
   .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
-  .btn.primary:hover { color: #fff; filter: brightness(1.08); }
-  .frame { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: var(--bg); border: 1px solid var(--line); }
+  .btn.primary:hover { color: #fff; filter: brightness(1.1); box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25); }
+
+  /* Frame */
+  .frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 480px;
+    max-height: 80vh;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #061e16;
+    border: 1px solid var(--line);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+  }
   .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .desc { margin: 12px 4px 0; color: var(--ink-2); font-size: 14px; }
+  .desc { margin: 14px 6px 4px; color: var(--ink-2); font-size: 14px; line-height: 1.6; }
 
-  h2 { font-size: 20px; margin: 34px 0 14px; }
+  /* Sections */
+  h2 { font-size: 22px; margin: 38px 0 16px; font-weight: 800; color: var(--ink); }
   .modules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-  .mod { text-align: left; font: inherit; color: inherit; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px; cursor: pointer; display: grid; grid-template-columns: 34px 1fr; gap: 14px; transition: transform .15s, border-color .15s; }
-  .mod:hover { transform: translateY(-2px); border-color: var(--brand); }
-  .mod[aria-current="true"] { border-color: var(--brand); box-shadow: inset 0 0 0 1px var(--brand); }
-  .mod .n { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); font-weight: 800; }
-  .mod h3 { margin: 0 0 4px; font-size: 16px; line-height: 1.3; }
-  .mod p { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); }
-  .mod small { font-size: 12px; color: var(--muted); }
+  .mod {
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 14px;
+    transition: transform .18s, border-color .18s, box-shadow .18s;
+  }
+  .mod:hover { transform: translateY(-3px); border-color: var(--c, var(--brand)); box-shadow: 0 8px 20px rgba(0,0,0,.06); }
+  .mod[aria-current="true"] { border-color: var(--c, var(--brand)); box-shadow: 0 0 0 2px var(--c, var(--brand)), 0 8px 20px rgba(0,0,0,.08); }
+  .mod .n {
+    width: 56px;
+    height: 56px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 6px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    border: 2px solid var(--c, var(--brand));
+  }
+  .mod .n img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .mod h3 { margin: 0 0 4px; font-size: 15px; font-weight: 800; line-height: 1.35; color: var(--ink); }
+  .mod p { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+  .mod small { font-size: 12px; color: var(--brand); font-weight: 700; }
 
+  /* Practical Tools Cards */
+  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tool {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--paper);
+    border: 2px solid var(--brand);
+    border-radius: 16px;
+    padding: 18px 20px;
+    font-size: 14px;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.06);
+  }
+  .tool:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(5, 150, 105, 0.15); }
+  .tool b { display: block; font-size: 17px; color: var(--ink); margin-bottom: 6px; font-weight: 800; }
+
+  /* User notes */
   .notes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-  .note { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--ink-2); }
-  .note b { color: var(--ink); display: block; margin-bottom: 4px; }
-  kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; background: var(--bg); }
-  footer { margin-top: 36px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+  .note { background: var(--paper); border: 2px solid var(--line); border-radius: 16px; padding: 16px 18px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+  .note b { color: var(--ink); display: block; margin-bottom: 6px; font-size: 15px; }
+  .note:nth-child(1) { border-color: #059669; }
+  .note:nth-child(2) { border-color: #15803d; }
+  .note:nth-child(3) { border-color: #d97706; }
+  .note:nth-child(4) { border-color: #2563eb; }
+  kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 1px 5px; background: var(--bg); font-weight: 700; }
 
-  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .tool { display: block; background: var(--paper); border: 2px solid #059669; border-radius: 14px; padding: 16px 18px; font-size: 14px; color: var(--ink-2); text-decoration: none; }
-  .tool:hover { transform: translateY(-2px); }
-  .tool b { display: block; font-size: 16px; color: var(--ink); margin-bottom: 4px; }
-  @media (max-width: 900px) { .modules, .notes { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 640px) {
-    .wrap { padding: 18px 16px 36px; }
+  footer {
+    margin-top: 48px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .modules, .notes { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    .wrap { padding: 16px 14px 36px; }
     .modules, .notes, .tools { grid-template-columns: 1fr; }
-    .frame { aspect-ratio: auto; height: 72vh; }
-    .bar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .frame { aspect-ratio: auto; height: 68vh; min-height: 400px; }
+    .bar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .bar label, #playBtn { display: none; }
     select { grid-column: 1 / -1; min-width: 0; width: 100%; max-width: none; font-size: 16px; }
-    .bar .btn { justify-content: center; padding: 9px 2px; font-size: 13px; white-space: nowrap; }
+    .bar .btn { justify-content: center; padding: 9px 4px; font-size: 13px; white-space: nowrap; }
+    header { padding: 20px; }
+    .stats { width: 100%; justify-content: space-between; }
   }
-  header { background: linear-gradient(120deg, #064e3b 0%, #065f46 55%, #047857 100%); color: #fff; padding: 26px 28px; border-radius: 18px; }
-  header .eyebrow { color: #a7f3d0; } header h1 { color: #fff; } header .lead { color: #e2e8f0; }
-  .stats b { color: #a7f3d0; } .stats span { color: #e2e8f0; }
-  .mod { grid-template-columns: 58px 1fr; background: color-mix(in srgb, var(--c) 9%, var(--paper)); border: 2px solid color-mix(in srgb, var(--c) 40%, var(--paper)); }
-  .mod:hover { border-color: var(--c); } .mod[aria-current="true"] { border-color: var(--c); box-shadow: inset 0 0 0 1px var(--c); }
-  .mod .n { width: 58px; height: 58px; background: #fff; border-radius: 50%; padding: 7px; box-shadow: 0 0 0 2px var(--c); } .mod .n img { width: 100%; height: 100%; display: block; }
-  .mod h3 { color: color-mix(in srgb, var(--c) 82%, var(--ink)); }
-  .note { border-width: 2px; } .note:nth-child(1) { border-color: #059669; } .note:nth-child(2) { border-color: #15803d; } .note:nth-child(3) { border-color: #d97706; } .note:nth-child(4) { border-color: #2563eb; }
 </style>
 </head>
 <body>
@@ -108,7 +217,7 @@
     <div>
       <div class="eyebrow">Japanese Agricultural Standards · Khoá học mở</div>
       <h1>Tiêu chuẩn JAS Hữu cơ Nhật Bản</h1>
-      <p class="lead">Khoá học tiếng Việt toàn diện cho cán bộ QA/QC, chuyên viên đánh giá và nhà máy nông sản xuất khẩu: từ canh tác thực vật (JAS 1605), chế biến (JAS 1606), ghi nhãn & dấu JAS đến phương pháp thanh tra hiện trường. Có thuyết minh giọng đọc tiếng Việt khi trình chiếu.</p>
+      <p class="lead">Khoá học bài giảng web tiếng Việt toàn diện dành cho cán bộ QA/QC, chuyên viên đánh giá chứng nhận và doanh nghiệp nông sản xuất khẩu: từ chuẩn canh tác thực vật (JAS 1605), thực phẩm chế biến (JAS 1606), quy định ghi nhãn & dấu JAS đến phương pháp thanh tra hiện trường.</p>
     </div>
     <div class="stats">
       <div><b>8</b><span>Module</span></div>
@@ -122,33 +231,41 @@
     <div class="bar">
       <label for="moduleSelect">Nội dung:</label>
       <select id="moduleSelect"></select>
-      <button class="btn primary" id="playBtn" type="button" title="Phát thuyết minh từ slide đầu, tự chuyển slide">▶ Trình chiếu có thuyết minh</button>
+      <button class="btn primary" id="playBtn" type="button" title="Phát thuyết minh từ slide đầu, tự chuyển slide">▶ Trình chiếu có giọng đọc</button>
       <a class="btn" id="openBtn" href="#" target="_blank" rel="noopener" title="Mở trong tab mới để trình chiếu toàn màn hình">⛶ Mở tab mới</a>
       <a class="btn" id="fcBtn" href="on-tap.html" title="Ôn module này bằng thẻ lật">🃏 Flashcard</a>
       <a class="btn" id="quizBtn" href="on-tap.html" title="Tự kiểm tra module này">🎯 Quiz</a>
+      <a class="btn" id="toolBtn" href="cong-cu.html" title="Checklist và Máy tính thực hành">🛠️ Công cụ</a>
+      <button class="btn" id="themeBtn" type="button" title="Đổi giao diện sáng/tối">🌓 Giao diện</button>
     </div>
     <div class="frame"><iframe id="deckFrame" title="Slide Tiêu chuẩn JAS Hữu cơ" allow="fullscreen; autoplay"></iframe></div>
     <p class="desc" id="moduleDesc"></p>
   </section>
 
-  <h2>Thực hành</h2>
+  <h2>Thực hành & Tự Đánh Giá</h2>
   <div class="tools">
-    <a class="tool" href="cong-cu.html"><b>📋 Checklist Tự Đánh Giá Tuân Thủ</b>20 tiêu chí vàng tự kiểm tra độ sẵn sàng trước đợt thanh tra chính thức cho Nông trại (JAS 1605) và Nhà máy chế biến (JAS 1606).</a>
-    <a class="tool" href="cong-cu.html"><b>🧮 Máy Tính % Hữu Cơ & Cân Đối Khối Lượng</b>Tính nhanh tỷ lệ nguyên liệu hữu cơ (loại trừ nước & muối theo chuẩn ≥ 95%) và thực hành kiểm toán Mass Balance phát hiện xuất thừa.</a>
+    <a class="tool" href="cong-cu.html">
+      <b>📋 Checklist Tự Đánh Giá Tuân Thủ JAS</b>
+      <span>Bảng kiểm tra 20 tiêu chí vàng tự rà soát độ sẵn sàng trước đợt thanh tra chính thức cho Nông trại (JAS 1605) và Nhà máy chế biến (JAS 1606).</span>
+    </a>
+    <a class="tool" href="cong-cu.html#calc">
+      <b>🧮 Máy Tính % Hữu Cơ & Cân Đối Khối Lượng</b>
+      <span>Tính nhanh tỷ lệ thành phần hữu cơ (loại trừ nước và muối theo chuẩn ≥ 95%) và thực hành kiểm toán Mass Balance phát hiện xuất thừa bất thường.</span>
+    </a>
   </div>
 
-  <h2>Lộ trình 8 module</h2>
+  <h2>Lộ trình 8 module chuẩn hoá</h2>
   <div class="modules" id="moduleList"></div>
 
-  <h2>Cách sử dụng</h2>
+  <h2>Cách sử dụng & Phím tắt</h2>
   <div class="notes">
-    <div class="note"><b>Điều khiển slide</b>Dùng <kbd>←</kbd> <kbd>→</kbd> hoặc nút Trước / Tiếp; <kbd>F</kbd> toàn màn hình; vuốt trái / phải trên điện thoại. Màn hình hẹp tự chuyển sang dạng cuộn và vẫn có thanh thuyết minh ở đáy.</div>
-    <div class="note"><b>Thuyết minh âm thanh</b>Bấm <kbd>▶ Phát</kbd> trên thanh dưới slide (hoặc <kbd>P</kbd>). Đọc xong tự chuyển slide; chỉnh tốc độ 0,9–1,4×; nút 📝 hiện lời đọc.</div>
-    <div class="note"><b>Lưu ý về giọng đọc</b>Dùng Google Translate TTS nên cần Internet; nội dung lời đọc được gửi tới Google. Không gửi thông tin người học.</div>
-    <div class="note"><b>Cài lên iPhone</b>Mở trang bằng Safari, bấm nút Chia sẻ rồi chọn <kbd>Thêm vào MH chính</kbd>. Sau khi mở một lần, slide, flashcard và quiz dùng được khi không có mạng; giọng đọc vẫn cần Internet.</div>
+    <div class="note"><b>Điều khiển slide</b>Dùng <kbd>←</kbd> <kbd>→</kbd> hoặc nút Trước / Tiếp; <kbd>F</kbd> toàn màn hình; lăn chuột hoặc vuốt trái / phải trên điện thoại. Khi cuộn trên khung slide, trang chủ vẫn cuộn mượt mà.</div>
+    <div class="note"><b>Thuyết minh âm thanh</b>Bấm <kbd>▶ Trình chiếu có giọng đọc</kbd> (hoặc phím <kbd>P</kbd>). Đọc xong tự chuyển slide; tuỳ chỉnh tốc độ 0,9–1,4×; nút 📝 xem toàn văn lời đọc.</div>
+    <div class="note"><b>Lưu ý về giọng đọc</b>Sử dụng công nghệ Google Translate TTS nên cần Internet; nội dung lời đọc gửi tới Google. Hệ thống không thu thập bất kỳ thông tin cá nhân nào của người học.</div>
+    <div class="note"><b>Cài lên điện thoại (PWA)</b>Mở trang bằng Safari (iPhone) hoặc Chrome (Android), chọn <kbd>Thêm vào màn hình chính</kbd>. Sau khi mở một lần, toàn bộ slide, flashcard và quiz dùng được ngoại tuyến khi mất mạng.</div>
   </div>
 
-  <footer>Tài liệu đào tạo biên soạn bằng tiếng Việt dựa trên quy chuẩn chính thức của Bộ Nông Lâm Thủy sản Nhật Bản (MAFF). Khi áp dụng thực tế, doanh nghiệp cần đối chiếu trực tiếp với các thông tư và hướng dẫn của Tổ chức Chứng nhận (CB) chỉ định.</footer>
+  <footer>Khoá học được biên soạn chuẩn hoá dựa trên các văn bản quy chuẩn chính thức của Bộ Nông Lâm Thủy sản Nhật Bản (MAFF). Khi áp dụng thực tế tại cơ sở, cần đối chiếu với các thông tư và hướng dẫn của Tổ chức Chứng nhận (CB) chỉ định.</footer>
 </div>
 
 <script>
@@ -168,12 +285,39 @@
   var openBtn = document.getElementById('openBtn');
   var descEl = document.getElementById('moduleDesc');
   var list = document.getElementById('moduleList');
+  var themeBtn = document.getElementById('themeBtn');
 
-  function theme() {
+  function getTheme() {
     var forced = document.documentElement.getAttribute('data-theme');
     if (forced) return forced;
+    try {
+      var saved = localStorage.getItem('jas_theme');
+      if (saved) return saved;
+    } catch (e) {}
     return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
+
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('jas_theme', t); } catch (e) {}
+    // Cập nhật theme cho iframe hiện tại nếu có
+    if (frame && frame.src) {
+      try {
+        var u = new URL(frame.src);
+        u.searchParams.set('theme', t);
+        frame.src = u.toString();
+      } catch (err) {}
+    }
+  }
+
+  // Khởi tạo theme
+  applyTheme(getTheme());
+
+  themeBtn.addEventListener('click', function () {
+    var cur = getTheme();
+    var next = (cur === 'dark') ? 'light' : 'dark';
+    applyTheme(next);
+  });
 
   MODULES.forEach(function (m, i) {
     var o = document.createElement('option');
@@ -185,10 +329,13 @@
     b.type = 'button';
     b.className = 'mod';
     b.style.setProperty('--c', m.color);
-    b.innerHTML = '<span class="n"><img src="' + m.art + '" alt=""></span><span><h3></h3><p></p><small>Module ' + (i + 1) + ' · ' + m.slides + ' slide</small></span>';
+    b.innerHTML = '<span class="n"><img src="' + m.art + '" alt=""></span><span><h3></h3><p></p><small>Module ' + (i + 1) + ' · ' + m.slides + ' slide →</small></span>';
     b.querySelector('h3').textContent = m.title;
     b.querySelector('p').textContent = m.desc;
-    b.addEventListener('click', function () { select(i); document.querySelector('.viewer').scrollIntoView({ behavior: 'smooth' }); });
+    b.addEventListener('click', function () {
+      select(i);
+      document.querySelector('.viewer').scrollIntoView({ behavior: 'smooth' });
+    });
     list.appendChild(b);
   });
   document.getElementById('totalSlides').textContent = MODULES.reduce(function (s, m) { return s + m.slides; }, 0);
@@ -196,7 +343,7 @@
   function select(i) {
     var m = MODULES[i];
     sel.value = i;
-    frame.src = m.file + '?theme=' + theme();
+    frame.src = m.file + '?theme=' + getTheme();
     openBtn.href = m.file;
     document.getElementById('fcBtn').href = 'on-tap.html#m' + (i + 1);
     document.getElementById('quizBtn').href = 'on-tap.html#m' + (i + 1) + '-quiz';
@@ -212,10 +359,17 @@
     frame.focus();
   });
 
+  // Xử lý chuyển tiếp cuộn chuột (Wheel forwarding) từ iframe ra trang cha
+  window.addEventListener('message', function (e) {
+    if (e.data && e.data.type === 'deck-scroll') {
+      window.scrollBy({ top: e.data.deltaY, behavior: 'auto' });
+    }
+  });
+
   var fromHash = /^#m(\d)/.exec(location.hash);
-  var saved = null;
-  try { saved = localStorage.getItem('jas_module'); } catch (e) {}
-  var startIdx = fromHash ? Number(fromHash[1]) - 1 : (saved !== null ? Number(saved) : 0);
+  var savedMod = null;
+  try { savedMod = localStorage.getItem('jas_module'); } catch (e) {}
+  var startIdx = fromHash ? Number(fromHash[1]) - 1 : (savedMod !== null ? Number(savedMod) : 0);
   select(startIdx >= 0 && startIdx < MODULES.length ? startIdx : 0);
 </script>
 <script src="pwa.js"></script>
