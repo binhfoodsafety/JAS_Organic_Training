@@ -1,5 +1,8 @@
 /* Styling cho trang Công cụ thực hành JAS Organic */
+/* deck.css khoá html/body cao 100% và overflow:hidden cho trình chiếu; trang công cụ cần cuộn bình thường */
+html:has(body.tool-page), body.tool-page { height: auto; }
 .tool-page {
+  overflow: visible;
   background: var(--bg, #f8fafc);
   color: var(--text, #0f172a);
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;

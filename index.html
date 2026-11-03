@@ -40,7 +40,9 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; }
+  /* deck.css khoá html/body cao 100% và overflow:hidden cho trình chiếu; trang chủ cần cuộn bình thường */
+  html, body { height: auto; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.5; overflow: visible; }
   .wrap { max-width: 1240px; margin: 0 auto; padding: 24px 20px 48px; }
 
   /* Header */
